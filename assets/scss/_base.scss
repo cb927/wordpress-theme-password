@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/* 基礎のスタイル */
+
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,700;0,800;1,100&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    margin-top: unset !important;
+    font-size: 16px;
+}
+a {
+    text-decoration: none !important;
+    @include transition-all;
+}
+
+* a {
+    text-decoration: none !important;
+    color: unset;
+}
+
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.pc,
+.tb,
+.sp {
+    display: none !important;
+}
+
+.fit-content {
+    @include width-fit-content();
+    margin: auto;
+}
+
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-underline {
+    border-bottom: 1px solid #CEA31E;
+}
+
+@media screen and (min-width: 1025px) {
+    .pc {
+        display: block !important;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .tb {
+        display: block !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 4vw;
+    }
+    .sp {
+        display: block !important;
+    }
+}
