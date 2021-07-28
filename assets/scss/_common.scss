@@ -3,7 +3,6 @@ body {
 }
 
 .container {
-    max-width: 1280px;
     width: 100%;
     margin: auto;
     background: white;
@@ -17,10 +16,11 @@ body {
     }
 }
 
-
 .form-group {
     width: 550px;
-    @include display-flex();
+
+    @include display-flex;
+
     margin-bottom: 20px;
 
     .form-label {
@@ -46,6 +46,7 @@ body {
         font-size: 32px;
         margin-bottom: 25px;
     }
+
     .text-sm {
         font-size: 15px;
         margin-bottom: 25px;
@@ -64,7 +65,8 @@ body {
     border: none;
     font-size: 20px;
     cursor: pointer;
-    @include transition-all();
+
+    @include transition-all;
 
     &:nth-of-type(1) {
         margin-top: 0;
@@ -107,8 +109,10 @@ body {
         position: absolute;
         top: 50%;
         left: 50%;
-        @include width-fit-content();
+
+        @include width-fit-content;
         @include transform(translate(-50%, -50%));
+
         padding: 60px 120px;
 
         .modal__title {
@@ -128,8 +132,10 @@ body {
 
 .section__title {
     font-weight: normal;
-    @include display-flex();
-    @include align-items-center();
+
+    @include display-flex;
+    @include align-items-center;
+
     border-bottom: 1px solid #262626;
     margin: 0 20px;
     position: relative;
@@ -141,7 +147,7 @@ body {
 
     span {
         display: block;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 42px;
     }
 
@@ -157,7 +163,8 @@ body {
         color: white;
 
         &::before {
-            @include transition-all();
+            @include transition-all;
+
             position: absolute;
             content: "";
             right: -10px;
@@ -167,7 +174,8 @@ body {
         }
 
         &::after {
-            @include transition-all();
+            @include transition-all;
+
             position: absolute;
             content: "";
             left: -10px;
@@ -208,7 +216,9 @@ main {
             position: absolute;
             top: 50%;
             left: 50%;
+
             @include transform(translate(-50%, -50%));
+
             z-index: 99;
         }
 
@@ -234,14 +244,16 @@ main {
                 margin-right: 3px;
 
                 img {
-                    @include transition-all();
+                    @include transition-all;
+
                     width: 100%;
                     height: 100%;
-                    filter: grayscale(100%);
+                    filter: grayscale(0%);
                 }
 
                 .item__cover {
-                    @include transition-all();
+                    @include transition-all;
+
                     position: absolute;
                     right: 0;
                     left: 0;
@@ -252,18 +264,21 @@ main {
                     .cover__text {
                         position: absolute;
                         color: white;
-                        @include transition-all();
-                        @include width-fit-content();
+
+                        @include transition-all;
+                        @include width-fit-content;
+
                         font-size: 20px;
                         top: 50%;
                         left: 50%;
+
                         @include transform(translate(-50%, -50%));
                     }
                 }
 
                 &:hover {
                     img {
-                        filter: grayscale(0%);
+                        filter: grayscale(100%);
                     }
 
                     .item__cover {
@@ -298,26 +313,89 @@ main {
         //top page
         &.work-top {
             margin-top: 30px;
-            @include display-flex();
-            @include justify-content-space-between();
+            color: white;
 
             .work__item {
-                display: block;
-                margin-right: 20px;
-                height: 120px;
-                overflow: hidden;
+                padding: 30px 45px 50px;
 
-                // border: 1px solid #CEA31E;
-                &:nth-last-of-type(1) {
-                    margin-right: 0;
+                @include display-flex;
+
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+
+                .work__item__content {
+                    line-height: 1.5;
+                    width: 50%;
+
+                    .item__title {
+                        font-size: 65px;
+                        font-weight: normal;
+                        margin-bottom: 24px;
+                    }
+
+                    .item__content {
+                        font-size: 20px;
+                        margin-bottom: 24px;
+                    }
+
+                    .item__detail {
+                        font-size: 15px;
+                    }
                 }
 
-                img {
-                    height: 100%;
+                .work__item__btn {
+                    width: 50%;
+                    position: relative;
+
+                    .work__link {
+                        display: block;
+                        width: 300px;
+                        text-align: center;
+                        border-radius: 5px;
+                        padding: 20px 0;
+                        font-size: 20px;
+                        line-height: 1.5;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+
+                        &.work__link--model {
+                            background: #3E2EFF;
+                        }
+
+                        &.work__link--liver {
+                            background: #EA6300;
+                        }
+
+                        &.work__link--pro {
+                            background: #EAC600;
+                        }
+
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                    }
                 }
 
-                &:hover {
-                    opacity: 0.7;
+                &.work__item--model {
+                    background-image: url(../img/work/work-model.png);
+                }
+
+                &.work__item--liver {
+                    background-image: url(../img/work/work-liver.png);
+                    flex-direction: row-reverse;
+
+                    .work__item__btn {
+                        .work__link {
+                            right: unset;
+                            left: 0;
+                        }
+                    }
+                }
+
+                &.work__item--pro {
+                    background-image: url(../img/work/work-pro.png);
                 }
             }
         }
@@ -332,14 +410,16 @@ main {
                 .info-list__item {
                     margin-top: 20px;
                     line-height: 1;
-                    @include display-flex();
+
+                    @include display-flex;
 
                     .date {
                         width: 50%;
                     }
 
                     .title {
-                        @include transition-all();
+                        @include transition-all;
+
                         width: 50%;
                         border-bottom: 1px solid transparent;
                     }
@@ -360,7 +440,8 @@ main {
         //info page
         &.info {
             margin-top: 25px;
-            @include display-flex();
+
+            @include display-flex;
 
             .info__main {
                 width: 70%;
@@ -426,11 +507,12 @@ main {
 
                 .tabs {
                     position: relative;
-                    @include display-flex();
-                    @include justify-content-space-between();
+
+                    @include display-flex;
+                    @include justify-content-space-between;
 
                     .categories {
-                        @include display-flex();
+                        @include display-flex;
 
                         .tab-link {
                             display: block;
@@ -444,7 +526,8 @@ main {
                             position: relative;
 
                             &::before {
-                                @include transition-all();
+                                @include transition-all;
+
                                 position: absolute;
                                 content: "";
                                 right: -10px;
@@ -454,7 +537,8 @@ main {
                             }
 
                             &::after {
-                                @include transition-all();
+                                @include transition-all;
+
                                 position: absolute;
                                 content: "";
                                 left: -10px;
@@ -493,7 +577,8 @@ main {
                         height: 28px;
                         width: 220px;
                         margin-left: 20px;
-                        @include display-flex();
+
+                        @include display-flex;
 
                         input {
                             height: 100%;
@@ -511,7 +596,8 @@ main {
                             border: none;
                             border-radius: 0px;
                             line-height: 28px;
-                            @include transition-all();
+
+                            @include transition-all;
 
                             &:hover {
                                 background: #707070;
@@ -532,7 +618,7 @@ main {
                             display: grid;
                         }
 
-                        grid-template-columns: 24% 24% 24% 24%;
+                        grid-template-columns: 230px 230px 230px 230px;
                         column-gap: 1.33333333%;
 
                         .model__item {
@@ -547,7 +633,8 @@ main {
                                 overflow: hidden;
 
                                 img {
-                                    @include transition-all();
+                                    @include transition-all;
+
                                     width: 100%;
                                     height: 100%;
                                 }
@@ -572,6 +659,7 @@ main {
                             font-size: 42px;
                             left: 50%;
                             top: 50%;
+
                             @include transform(translate(-50%, -50%));
                         }
                     }
@@ -583,7 +671,8 @@ main {
 
                 .main__content {
                     margin-top: 50px;
-                    @include display-flex();
+
+                    @include display-flex;
 
                     .name {
                         font-size: 42px;
@@ -596,15 +685,17 @@ main {
                     }
 
                     .content__img {
-                        width: calc(50% - 25px);
-                        margin-right: 25px;
+                        width: calc(50% - 20px);
+                        margin-right: 20px;
 
                         .img__main {
                             width: 100%;
                             margin-bottom: 25px;
+                            height: 600px;
 
                             img {
                                 width: 100%;
+                                height: 100%;
                             }
                         }
 
@@ -656,7 +747,7 @@ main {
                         }
 
                         .social {
-                            @include display-flex();
+                            @include display-flex;
 
                             img {
                                 height: 32px;
@@ -677,7 +768,8 @@ main {
             padding: 30px 0 50px;
 
             .banner__logo {
-                @include width-fit-content();
+                @include width-fit-content;
+
                 margin: auto;
 
                 img {
@@ -686,7 +778,8 @@ main {
             }
 
             .banner__text {
-                @include width-fit-content();
+                @include width-fit-content;
+
                 margin: auto;
                 margin-top: 50px;
                 color: #414141;
@@ -709,8 +802,9 @@ main {
 
         &.work {
             margin-top: 55px;
-            @include display-flex();
-            @include justify-content-space-between();
+
+            @include display-flex;
+            @include justify-content-space-between;
 
             .work__item {
                 width: 320px;
@@ -759,7 +853,8 @@ main {
             padding: 50px 0;
 
             .banner__text {
-                @include width-fit-content();
+                @include width-fit-content;
+
                 margin: auto;
                 color: #414141;
                 font-size: 20px;
@@ -774,7 +869,8 @@ main {
             line-height: 2.4;
 
             .company__author {
-                @include width-fit-content();
+                @include width-fit-content;
+
                 margin: 50px auto 0;
 
                 .function {
@@ -837,7 +933,8 @@ main {
         //contact page
         &.contact {
             .contact__main {
-                @include width-fit-content();
+                @include width-fit-content;
+
                 margin: 25px auto 0;
 
                 .contact__title {
@@ -864,15 +961,17 @@ footer {
     background: linear-gradient(black, #2b2b2b);
 
     .footer-logo {
-        @include width-fit-content();
+        @include width-fit-content;
+
         margin: auto;
     }
 
     .footer-main {
         max-width: 500px;
         margin: 25px auto;
-        @include display-flex();
-        @include justify-content-space-between();
+
+        @include display-flex;
+        @include justify-content-space-between;
 
         .main__title {
             font-size: 13px;
@@ -881,7 +980,8 @@ footer {
 
         .main__content {
             font-size: 10px;
-            @include display-flex();
+
+            @include display-flex;
 
             .content__item {
                 margin-right: 40px;
@@ -944,11 +1044,12 @@ footer {
     .form-success {
         width: 100%;
         padding: 50vw 0;
-    
+
         .text-bg {
             font-size: 7.2vw;
             margin-bottom: 6.67vw;
         }
+
         .text-sm {
             font-size: 4vw;
             margin-bottom: 6.67vw;
@@ -971,7 +1072,9 @@ footer {
             top: 8vw;
             left: 50%;
             width: 96vw;
+
             @include transform(translateX(-50%));
+
             padding: 2vw 2vw 10vw;
 
             .modal__title {
@@ -995,7 +1098,7 @@ footer {
         }
 
         span {
-            font-size: 6.5vw;
+            font-size: 6.5vw;
             line-height: 11.2vw;
         }
 
@@ -1067,22 +1170,65 @@ footer {
             }
 
             //top page
+
             &.work-top {
                 margin-top: 3.2vw;
-                display: block;
-
                 .work__item {
-                    width: 100%;
-                    margin-right: 0;
-                    margin-bottom: 2vw;
-                    height: 30vw;
+                    padding: 4vw 6vw 6.67vw;
+                    display: block;
 
-                    img {
+                    .work__item__content {
                         width: 100%;
+
+                        .item__title {
+                            font-size: 8.6vw;
+                            margin-bottom: 3.2vw;
+                        }
+
+                        .item__content {
+                            font-size: 2.67vw;
+                            margin-bottom: 3.2vw;
+                        }
+
+                        .item__detail {
+                            font-size: 2vw;
+                        }
                     }
 
-                    &:nth-last-of-type(1) {
-                        margin-bottom: 0;
+                    .work__item__btn {
+                        width: 100%;
+                        position: relative;
+
+                        .work__link {
+                            position: relative;
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                            border-radius: 1vw;
+                            padding: 2.67vw 0;
+                            font-size: 2.67vw;
+                            margin-top: 4vw;
+                        }
+                    }
+
+                    &.work__item--model {
+                        background-image: url(../img/work/work-model.png);
+                    }
+
+                    &.work__item--liver {
+                        background-image: url(../img/work/work-liver.png);
+                        flex-direction: row-reverse;
+
+                        .work__item__btn {
+                            .work__link {
+                                right: unset;
+                                left: 0;
+                            }
+                        }
+                    }
+
+                    &.work__item--pro {
+                        background-image: url(../img/work/work-pro.png);
                     }
                 }
             }
@@ -1167,7 +1313,7 @@ footer {
                         display: block;
 
                         .categories {
-                            @include display-flex();
+                            @include display-flex;
 
                             .tab-link {
                                 margin: 0 2vw;
@@ -1214,7 +1360,8 @@ footer {
                             margin-top: 4vw;
                             height: 7.5vw;
                             width: 100%;
-                            @include display-flex();
+
+                            @include display-flex;
 
                             input {
                                 height: 100%;
@@ -1232,7 +1379,8 @@ footer {
                                 border: none;
                                 border-radius: 0px;
                                 line-height: 7.5vw;
-                                @include transition-all();
+
+                                @include transition-all;
 
                                 &:hover {
                                     background: #707070;
@@ -1294,6 +1442,7 @@ footer {
                             .img__main {
                                 width: 100%;
                                 margin-bottom: 25px;
+                                height: 130vw;
 
                                 img {
                                     width: 100%;
@@ -1429,6 +1578,7 @@ footer {
                 .company__author {
                     margin: 15vw auto 0;
                     text-align: center;
+
                     .function {
                         font-size: 4.3vw;
                         margin-right: 0;
@@ -1487,7 +1637,6 @@ footer {
             }
         }
     }
-
 
     footer {
         padding-top: 8vw;

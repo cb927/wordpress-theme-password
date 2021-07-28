@@ -61,10 +61,17 @@ $(document).ready(function () {
 		$('#panel-group').siblings().removeClass('active');
 	})
 
-	//work model
-	$('.work__btn').click(function(){
-		$('.work-modal').addClass('active');
+	//work modal
+	$('.work__link--liver').click(function(){
+		$('.work-modal--liver').addClass('active');
 	})
+	$('.work__link--model').click(function(){
+		$('.work-modal--model').addClass('active');
+	})
+	$('.work__link--pro').click(function(){
+		$('.work-modal--pro').addClass('active');
+	})
+
 	$('.btn--cancel').click(function(){
 		$('.work-modal').removeClass('active');
 	})

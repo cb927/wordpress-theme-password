@@ -119,7 +119,6 @@ body {
   text-align: center;
   color: white;
   height: 65px;
-  line-height: 65px;
   margin-top: 10px;
   border-radius: 3px;
   border: none;
@@ -191,7 +190,7 @@ body {
     margin-right: 10px; }
   .section__title span {
     display: block;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 42px; }
   .section__title .more {
     display: block;
@@ -269,7 +268,7 @@ main {
         transition: all 0.3s ease;
         width: 100%;
         height: 100%;
-         }
+        filter: grayscale(0%); }
       main section .model-carousel .carousel__item .item__cover {
         -webkit-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
@@ -312,29 +311,61 @@ main {
       bottom: 0; }
   main section.work-top {
     margin-top: 30px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: space-between;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: space-between;
-    -moz-box-pack: space-between;
-    justify-content: space-between;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify; }
+    color: white; }
     main section.work-top .work__item {
-      display: block;
-      margin-right: 20px;
-      height: 120px;
-      overflow: hidden; }
-      main section.work-top .work__item:nth-last-of-type(1) {
-        margin-right: 0; }
-      main section.work-top .work__item img {
-        height: 100%; }
-      main section.work-top .work__item:hover {
-        opacity: 0.7; }
+      padding: 30px 45px 50px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; }
+      main section.work-top .work__item .work__item__content {
+        line-height: 1.5;
+        width: 50%; }
+        main section.work-top .work__item .work__item__content .item__title {
+          font-size: 65px;
+          font-weight: normal;
+          margin-bottom: 24px; }
+        main section.work-top .work__item .work__item__content .item__content {
+          font-size: 20px;
+          margin-bottom: 24px; }
+        main section.work-top .work__item .work__item__content .item__detail {
+          font-size: 15px; }
+      main section.work-top .work__item .work__item__btn {
+        width: 50%;
+        position: relative; }
+        main section.work-top .work__item .work__item__btn .work__link {
+          display: block;
+          width: 300px;
+          text-align: center;
+          border-radius: 5px;
+          padding: 20px 0;
+          font-size: 20px;
+          line-height: 1.5;
+          position: absolute;
+          bottom: 0;
+          right: 0; }
+          main section.work-top .work__item .work__item__btn .work__link.work__link--model {
+            background: #3E2EFF; }
+          main section.work-top .work__item .work__item__btn .work__link.work__link--liver {
+            background: #EA6300; }
+          main section.work-top .work__item .work__item__btn .work__link.work__link--pro {
+            background: #EAC600; }
+          main section.work-top .work__item .work__item__btn .work__link:hover {
+            opacity: 0.7; }
+      main section.work-top .work__item.work__item--model {
+        background-image: url(../img/work/work-model.png); }
+      main section.work-top .work__item.work__item--liver {
+        background-image: url(../img/work/work-liver.png);
+        flex-direction: row-reverse; }
+        main section.work-top .work__item.work__item--liver .work__item__btn .work__link {
+          right: unset;
+          left: 0; }
+      main section.work-top .work__item.work__item--pro {
+        background-image: url(../img/work/work-pro.png); }
   main section.info-top {
     margin-top: 30px; }
     main section.info-top .info-list__main {
@@ -499,7 +530,7 @@ main {
         min-height: calc(100vh - 375px);
         display: none;
         position: relative;
-        grid-template-columns: 24% 24% 24% 24%;
+        grid-template-columns: 230px 230px 230px 230px;
         column-gap: 1.33333333%; }
         main section.model .model__main .tab-panels .panel.active {
           display: grid; }
@@ -549,13 +580,15 @@ main {
           display: inline;
           font-size: 16px; }
       main section.model .model__main .main__content .content__img {
-        width: calc(50% - 25px);
-        margin-right: 25px; }
+        width: calc(50% - 20px);
+        margin-right: 20px; }
         main section.model .model__main .main__content .content__img .img__main {
           width: 100%;
-          margin-bottom: 25px; }
+          margin-bottom: 25px;
+          height: 600px; }
           main section.model .model__main .main__content .content__img .img__main img {
-            width: 100%; }
+            width: 100%;
+            height: 100%; }
         main section.model .model__main .main__content .content__img .img__sub {
           display: grid;
           grid-template-columns: 22% 22% 22% 22%;
@@ -807,7 +840,6 @@ footer {
   .btn {
     width: 100%;
     height: 17.3vw;
-	line-height: 17.3vw;
     margin-top: 2.6vw;
     border-radius: 1vw;
     font-size: 5.3vw; }
@@ -835,7 +867,7 @@ footer {
       height: 6.67vw;
       margin-right: 2.5vw; }
     .section__title span {
-      font-size: 8.5vw;
+      font-size: 6.5vw;
       line-height: 11.2vw; }
     .section__title .more {
       font-size: 3.2vw;
@@ -875,17 +907,42 @@ footer {
       main section.carousel .carousel__item {
         height: 90vw; }
     main section.work-top {
-      margin-top: 3.2vw;
-      display: block; }
+      margin-top: 3.2vw; }
       main section.work-top .work__item {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 2vw;
-        height: 30vw; }
-        main section.work-top .work__item img {
+        padding: 4vw 6vw 6.67vw;
+        display: block; }
+        main section.work-top .work__item .work__item__content {
           width: 100%; }
-        main section.work-top .work__item:nth-last-of-type(1) {
-          margin-bottom: 0; }
+          main section.work-top .work__item .work__item__content .item__title {
+            font-size: 8.6vw;
+            margin-bottom: 3.2vw; }
+          main section.work-top .work__item .work__item__content .item__content {
+            font-size: 2.67vw;
+            margin-bottom: 3.2vw; }
+          main section.work-top .work__item .work__item__content .item__detail {
+            font-size: 2vw; }
+        main section.work-top .work__item .work__item__btn {
+          width: 100%;
+          position: relative; }
+          main section.work-top .work__item .work__item__btn .work__link {
+            position: relative;
+            display: block;
+            width: 100%;
+            text-align: center;
+            border-radius: 1vw;
+            padding: 2.67vw 0;
+            font-size: 2.67vw;
+            margin-top: 4vw; }
+        main section.work-top .work__item.work__item--model {
+          background-image: url(../img/work/work-model.png); }
+        main section.work-top .work__item.work__item--liver {
+          background-image: url(../img/work/work-liver.png);
+          flex-direction: row-reverse; }
+          main section.work-top .work__item.work__item--liver .work__item__btn .work__link {
+            right: unset;
+            left: 0; }
+        main section.work-top .work__item.work__item--pro {
+          background-image: url(../img/work/work-pro.png); }
     main section.info-top {
       margin-top: 3vw; }
       main section.info-top .info-list__main {
@@ -1016,7 +1073,8 @@ footer {
           margin-right: 0; }
           main section.model .model__main .main__content .content__img .img__main {
             width: 100%;
-            margin-bottom: 25px; }
+            margin-bottom: 25px;
+            height: 130vw; }
             main section.model .model__main .main__content .content__img .img__main img {
               width: 100%; }
           main section.model .model__main .main__content .content__img .img__sub {
