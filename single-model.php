@@ -18,8 +18,6 @@
                         </button>
                     </form>
                 </div>
-
-
                 <?php while (have_posts()) : the_post(); ?>
                     <?php
                     $name = get_post_meta($post->ID, 'Name', true);
@@ -32,6 +30,9 @@
                     $twitter = get_post_meta($post->ID, 'twitter', true);
                     $instagram = get_post_meta($post->ID, 'instagram', true);
                     $tiktok = get_post_meta($post->ID, 'tiktok', true);
+                    $bigo = get_post_meta($post->ID, 'bigo', true);
+                    $mico = get_post_meta($post->ID, 'mico', true);
+                    $pokocha = get_post_meta($post->ID, 'pokocha', true);
                     $id = get_the_ID();
                     $banner_img = get_post_meta($id, 'post_banner_img', true);
                     $banner_img = explode(',', $banner_img);
@@ -116,13 +117,36 @@
                             </div>
                             <hr>
                             <div class="social">
-                                <a href="<?php echo $twitter; ?>">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter.png" alt="">
-                                </a><a href="<?php echo $instagram; ?>">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram.png" alt="">
-                                </a><a href="<?php echo $tiktok; ?>">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tiktok.png" alt="">
-                                </a>
+                                <?php if ($twitter) { ?>
+                                    <a href="<?php echo $twitter; ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitter.png" alt="">
+                                    </a>
+                                <?php } ?>
+                                <?php if ($instagram) { ?>
+                                    <a href="<?php echo $instagram; ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/instagram.png" alt="">
+                                    </a>
+                                <?php } ?>
+                                <?php if ($tiktok) { ?>
+                                    <a href="<?php echo $tiktok; ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tiktok.png" alt="">
+                                    </a>
+                                <?php } ?>
+                                <?php if ($bigo) { ?>
+                                    <a href="<?php echo $bigo; ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bigo.png" alt="">
+                                    </a>
+                                <?php } ?>
+                                <?php if ($mico) { ?>
+                                    <a href="<?php echo $mico; ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mico.png" alt="">
+                                    </a>
+                                <?php } ?>
+                                <?php if ($pokocha) { ?>
+                                    <a href="<?php echo $pokocha; ?>">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pokocha.png" alt="">
+                                    </a>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

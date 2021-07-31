@@ -199,15 +199,15 @@ $submitted_pro = 'no';
 				<input type='hidden' name='form_name' value='liver'>
 				<div class="form-group">
 					<div class="form-label">お名前<span style="color: red;">*</span></div>
-					<input type="text" class="form-control" required>
+					<input type="text" name="uname" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<div class="form-label">メールアドレス<span style="color: red;">*</span></div>
-					<input type="text" class="form-control" required>
+					<input type="text" name="email" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<div class="form-label">備考欄<span style="color: red;">*</span></div>
-					<textarea class="form-control" rows="5" required></textarea>
+					<textarea class="form-control" name="message" rows="5" required></textarea>
 				</div>
 				<button type="submit" class="btn btn--submit">送信する</button>
 				<button type="button" class="btn btn--cancel">戻る</button>
@@ -229,15 +229,15 @@ $submitted_pro = 'no';
 				<input type='hidden' name='form_name' value='model'>
 				<div class="form-group">
 					<div class="form-label">お名前<span style="color: red;">*</span></div>
-					<input type="text" class="form-control" required>
+					<input type="text" name="uname" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<div class="form-label">メールアドレス<span style="color: red;">*</span></div>
-					<input type="text" class="form-control" required>
+					<input type="text" name="email" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<div class="form-label">備考欄<span style="color: red;">*</span></div>
-					<textarea class="form-control" rows="5" required></textarea>
+					<textarea class="form-control" name="message" rows="5" required></textarea>
 				</div>
 				<button type="submit" class="btn btn--submit">送信する</button>
 				<button type="button" class="btn btn--cancel">戻る</button>
@@ -259,15 +259,15 @@ $submitted_pro = 'no';
 				<input type='hidden' name='form_name' value='pro'>
 				<div class="form-group">
 					<div class="form-label">お名前<span style="color: red;">*</span></div>
-					<input type="text" class="form-control" required>
+					<input type="text" name="uname" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<div class="form-label">メールアドレス<span style="color: red;">*</span></div>
-					<input type="text" class="form-control" required>
+					<input type="text" name="email" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<div class="form-label">備考欄<span style="color: red;">*</span></div>
-					<textarea class="form-control" rows="5" required></textarea>
+					<textarea class="form-control" name="message" rows="5" required></textarea>
 				</div>
 				<button type="submit" class="btn btn--submit">送信する</button>
 				<button type="button" class="btn btn--cancel">戻る</button>

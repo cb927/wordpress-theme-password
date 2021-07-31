@@ -6,7 +6,7 @@ add_action('init', function () {
         'banner_img',
         array(
             'labels' => array(
-                'name' => __('Banner Image (PC)'),
+                'name' => __('バナーイメージ (PC)'),
                 'singular_name' => __('banner_img')
             ),
             'rewrite' => array(
@@ -25,7 +25,7 @@ add_action('init', function () {
         'banner_img_sp',
         array(
             'labels' => array(
-                'name' => __('Banner Image (SP)'),
+                'name' => __('バナーイメージ (SP)'),
                 'singular_name' => __('banner_img_sp')
             ),
             'rewrite' => array(
@@ -72,7 +72,7 @@ add_action('init', function () {
             'has_archive' => true,
             'menu_position' => 29,
             'public' => true,
-            "supports" => ['title', 'custom-fields', 'thumbnail'],
+            "supports" => ['custom-fields', 'thumbnail'],
             'show_in_rest' => true,
             'taxonomies' => array('category'),
         )
@@ -92,7 +92,7 @@ add_action('init', function () {
             'has_archive' => true,
             'menu_position' => 30,
             'public' => true,
-            "supports" => ['title', 'editor', 'custom-fields', 'thumbnail'],
+            "supports" => ['editor', 'custom-fields', 'thumbnail'],
             'show_in_rest' => true,
             'taxonomies' => array('category'),
         )
@@ -116,6 +116,9 @@ add_action('save_post_model', function ($post_ID) {
         add_post_meta($post_ID, 'twitter', '');
         add_post_meta($post_ID, 'instagram', '');
         add_post_meta($post_ID, 'tiktok', '');
+        add_post_meta($post_ID, 'bigo', '');
+        add_post_meta($post_ID, 'mico', '');
+        add_post_meta($post_ID, 'pokocha', '');
     }
 });
 
@@ -126,12 +129,11 @@ add_action('save_post_liver', function ($post_ID) {
     ) {
         add_post_meta($post_ID, 'Name', '');
         add_post_meta($post_ID, 'name-confirm', '');
-        add_post_meta($post_ID, 'size', '');
-        add_post_meta($post_ID, 'b-w-h', '');
-        add_post_meta($post_ID, 'eye', '');
-        add_post_meta($post_ID, 'shoes', '');
         add_post_meta($post_ID, 'twitter', '');
         add_post_meta($post_ID, 'instagram', '');
         add_post_meta($post_ID, 'tiktok', '');
+        add_post_meta($post_ID, 'bigo', '');
+        add_post_meta($post_ID, 'mico', '');
+        add_post_meta($post_ID, 'pokocha', '');
     }
 });
