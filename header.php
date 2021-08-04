@@ -48,6 +48,7 @@
                         <a href="<?php echo home_url(); ?>/info" class="nav-item <?php if ($wp->request == 'info' || strpos($wp->request, 'info/') !== false) echo 'active'; ?>">INFO</a>
                         <a href="<?php echo home_url(); ?>/model" class="nav-item <?php if ($wp->request == 'model' || strpos($wp->request, 'model/') !== false) echo 'active'; ?>">MODEL</a>
                         <a href="<?php echo home_url(); ?>/liver" class="nav-item <?php if ($wp->request == 'liver' || strpos($wp->request, 'liver/') !== false) echo 'active'; ?>">LIVER</a>
+                        <a href="<?php echo home_url(); ?>/pro" class="nav-item <?php if ($wp->request == 'pro' || strpos($wp->request, 'pro/') !== false) echo 'active'; ?>">PROMOTION</a>
                         <a href="<?php echo home_url(); ?>/company" class="nav-item <?php if ($wp->request == 'company') echo 'active'; ?>">COMPANY</a>
                         <a href="<?php echo home_url(); ?>/contact" class="nav-item <?php if ($wp->request == 'contact') echo 'active'; ?>">CONTACT</a>
                     </div>

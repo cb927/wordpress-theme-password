@@ -18,7 +18,7 @@ function mailer_config($mail)
 	$mail->SMTPSecure = "ssl";
 	//Set TCP port to connect to
 	$mail->Port = 465;
-	
+
 	$mail->FromName = "Password";
 }
 
@@ -181,4 +181,18 @@ function wc_meta_box_save($post_id)
 	if (isset($_POST['post_banner_img'])) {
 		update_post_meta($post_id, 'post_banner_img', $_POST['post_banner_img']);
 	}
+}
+
+function the_post_video($post_id = NULL)
+{
+	global $post;
+	$target_post = $post;
+	if ($post_id !== NULL)
+		$target_post = get_post($post_id);
+
+	$matches = null;
+	if (preg_match('/<iframe(.*?)\\/?>(<\\/iframe>)?/s', $post->content, $matches)) {
+		return $matches[0];
+	}
+	return ''; // return empty if no iframe found.
 }

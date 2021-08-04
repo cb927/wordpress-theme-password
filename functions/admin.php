@@ -98,6 +98,25 @@ add_action('init', function () {
         )
     );
 
+    register_post_type(
+        'video',
+        array(
+            'labels' => array(
+                'name' => __('Video'),
+                'singular_name' => __('video')
+            ),
+            'rewrite' => array(
+                'slug' => 'video',
+                'with_front' => false,
+            ),
+            'hierarchical' => false,
+            'has_archive' => true,
+            'menu_position' => 31,
+            'public' => true,
+            "supports" => ['editor', 'title'],
+        )
+    );
+
     flush_rewrite_rules();
 });
 
@@ -119,6 +138,9 @@ add_action('save_post_model', function ($post_ID) {
         add_post_meta($post_ID, 'bigo', '');
         add_post_meta($post_ID, 'mico', '');
         add_post_meta($post_ID, 'pokocha', '');
+        add_post_meta($post_ID, 'bigo_rank', '');
+        add_post_meta($post_ID, 'mico_rank', '');
+        add_post_meta($post_ID, 'pokocha_rank', '');
     }
 });
 
@@ -135,5 +157,8 @@ add_action('save_post_liver', function ($post_ID) {
         add_post_meta($post_ID, 'bigo', '');
         add_post_meta($post_ID, 'mico', '');
         add_post_meta($post_ID, 'pokocha', '');
+        add_post_meta($post_ID, 'bigo_rank', '');
+        add_post_meta($post_ID, 'mico_rank', '');
+        add_post_meta($post_ID, 'pokocha_rank', '');
     }
 });

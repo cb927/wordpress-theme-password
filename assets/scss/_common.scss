@@ -64,6 +64,7 @@ body {
     border-radius: 3px;
     border: none;
     font-size: 20px;
+    line-height: 65px;
     cursor: pointer;
 
     @include transition-all;
@@ -86,6 +87,10 @@ body {
         &:hover {
             background-color: #181818;
         }
+    }
+
+    &.btn--yellow {
+        background: #EAC600;
     }
 }
 
@@ -203,6 +208,14 @@ main {
     padding-bottom: 55px;
     font: "A-OTF Ryumin Pr5";
 
+    &.main--pro {
+        padding-bottom: 0;
+    }
+
+    .bg-gray {
+        background: #2B2B2B;
+    }
+
     .slick-arrow {
         cursor: pointer;
         position: absolute;
@@ -228,6 +241,45 @@ main {
 
         &.arrow__right {
             right: 0;
+        }
+    }
+
+    .main__top {
+        padding: 50px 20px;
+        color: white;
+        text-align: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &.main__top--model {
+            background-image: url(../img/bg-model.png);
+        }
+
+        &.main__top--liver {
+            background-image: url(../img/bg-liver.png);
+        }
+
+        &.main__top--pro {
+            background-image: url(../img/bg-pro.png);
+        }
+
+        .main__top__title {
+            color: #FFD246;
+            font-size: 32px;
+        }
+
+        .main__top__content {
+            .content__title {
+                font-size: 17px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .content__detail {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
         }
     }
 
@@ -502,8 +554,22 @@ main {
 
         //model page
         &.model {
+            .model__title {
+                padding-top: 50px;
+                font-size: 20px;
+                text-align: center;
+                font-weight: normal;
+                border-bottom: 1px solid #B2B2B2;
+            }
+
             .model__main {
                 padding: 32px 20px;
+
+                .model_main_top {
+                    height: 500px;
+                    border: 1px solid red;
+                    margin-bottom: 50px;
+                }
 
                 .tabs {
                     position: relative;
@@ -512,10 +578,17 @@ main {
                     @include justify-content-space-between;
 
                     .categories {
-                        @include display-flex;
+                        // @include display-flex;
+                        &:hover {
+                            height: 28px;
+
+                            .tab-link {
+                                display: block;
+                            }
+                        }
 
                         .tab-link {
-                            display: block;
+                            display: none;
                             margin: 0 10px;
                             font-size: 13px;
                             line-height: 28px;
@@ -524,51 +597,15 @@ main {
                             background: #262626;
                             color: white;
                             position: relative;
-
-                            &::before {
-                                @include transition-all;
-
-                                position: absolute;
-                                content: "";
-                                right: -10px;
-                                top: 0;
-                                border-left: 10px solid #262626;
-                                border-bottom: 28px solid transparent;
-                            }
-
-                            &::after {
-                                @include transition-all;
-
-                                position: absolute;
-                                content: "";
-                                left: -10px;
-                                bottom: 0;
-                                border-right: 10px solid #262626;
-                                border-top: 28px solid transparent;
-                            }
+                            z-index: 999;
 
                             &.active {
+                                display: block;
                                 background: #707070;
-
-                                &::before {
-                                    border-left: 10px solid #707070;
-                                }
-
-                                &::after {
-                                    border-right: 10px solid #707070;
-                                }
                             }
 
                             &:hover {
                                 background: #707070;
-
-                                &::before {
-                                    border-left: 10px solid #707070;
-                                }
-
-                                &::after {
-                                    border-right: 10px solid #707070;
-                                }
                             }
                         }
                     }
@@ -618,8 +655,8 @@ main {
                             display: grid;
                         }
 
-                        grid-template-columns: 230px 230px 230px 230px;
-                        column-gap: 1.33333333%;
+                        grid-template-columns: 19.5% 19.5% 19.5% 19.5% 19.5%;
+                        column-gap: 0.5%;
 
                         .model__item {
                             display: inline-block;
@@ -629,7 +666,7 @@ main {
 
                             .item__img {
                                 width: 100%;
-                                height: 300px;
+                                height: 200px;
                                 overflow: hidden;
 
                                 img {
@@ -647,7 +684,7 @@ main {
                                 bottom: 0;
                                 color: white;
                                 line-height: 2.5;
-                                background: rgba($color: #0282b3, $alpha: 0.7);
+                                background: rgba($color: #000000, $alpha: 0.7);
                                 text-align: center;
                             }
 
@@ -755,11 +792,55 @@ main {
                         .social {
                             @include display-flex;
 
+                            margin-bottom: 15px;
+
                             img {
                                 height: 32px;
                                 margin-right: 25px;
                             }
                         }
+
+                        .badge {
+                            @include display-flex;
+
+                            flex-wrap: wrap;
+                            margin-bottom: 15px;
+
+                            img {
+                                height: 50px;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //promotion page
+        &.pro {
+            .pro__title {
+                padding-top: 50px;
+                font-size: 20px;
+                text-align: center;
+                font-weight: normal;
+                color: white;
+                border-bottom: 1px solid #707070;
+            }
+
+            .pro__main {
+                padding-top: 20px;
+                display: grid;
+                grid-template-columns: 48% 48%;
+                column-gap: 4%;
+
+                .video {
+                    margin-bottom: 30px;
+
+                    .video__title {
+                        margin-top: 20px;
+                        font-size: 12px;
+                        color: white;
+                        text-align: center;
                     }
                 }
             }
@@ -960,6 +1041,34 @@ main {
     }
 }
 
+.qrcode {
+    background-color: #EFEFEF;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .container__inner {
+        @include display-flex;
+        @include align-items-center;
+        @include justify-content-center;
+
+        .qr__img {
+            height: 218px;
+            margin-right: 60px;
+        }
+
+        .qr__text {
+            .qr__text__title {
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+
+            .qr__text__content {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
 footer {
     color: white;
     padding-top: 35px;
@@ -1065,6 +1174,7 @@ footer {
     .btn {
         width: 100%;
         height: 17.3vw;
+        line-height: 17.3vw;
         margin-top: 2.6vw;
         border-radius: 1vw;
         font-size: 5.3vw;
@@ -1151,6 +1261,29 @@ footer {
             }
         }
 
+        .main__top {
+            padding: 6.67vw 2vw;
+
+            .main__top__title {
+                font-size: 7vw;
+            }
+
+            .main__top__content {
+                text-align: left;
+
+                .content__title {
+                    font-size: 4.5vw;
+                    margin-top: 4vw;
+                    margin-bottom: 4vw;
+                }
+
+                .content__detail {
+                    font-size: 4vw;
+                    margin-bottom: 8vw;
+                }
+            }
+        }
+
         section {
             .model-carousel {
                 margin-top: 5.3vw;
@@ -1178,7 +1311,10 @@ footer {
             //top page
 
             &.work-top {
-                margin-top: 3.2vw;
+                margin-top: 0;
+                margin-right: -2vw;
+                margin-left: -2vw;
+
                 .work__item {
                     padding: 4vw 6vw 6.67vw;
                     display: block;
@@ -1312,52 +1448,32 @@ footer {
 
             //model page
             &.model {
+                .model__title {
+                    padding-top: 13.3vw;
+                    font-size: 5.3vw;
+                }
+
                 .model__main {
                     padding: 4vw 0;
+
+                    .model_main_top {
+                        height: 100vw;
+                        margin-bottom: 6.67vw;
+                    }
 
                     .tabs {
                         display: block;
 
                         .categories {
-                            @include display-flex;
+                            &:hover {
+                                height: 7vw;
+                            }
 
                             .tab-link {
                                 margin: 0 2vw;
                                 font-size: 2.4vw;
                                 line-height: 7vw;
                                 width: 28vw;
-
-                                &::before {
-                                    right: -2vw;
-                                    border-left: 2vw solid #262626;
-                                    border-bottom: 7vw solid transparent;
-                                }
-
-                                &::after {
-                                    left: -2vw;
-                                    border-right: 2vw solid #262626;
-                                    border-top: 7vw solid transparent;
-                                }
-
-                                &.active {
-                                    &::before {
-                                        border-left: 2vw solid #707070;
-                                    }
-
-                                    &::after {
-                                        border-right: 2vw solid #707070;
-                                    }
-                                }
-
-                                &:hover {
-                                    &::before {
-                                        border-left: 2vw solid #707070;
-                                    }
-
-                                    &::after {
-                                        border-right: 2vw solid #707070;
-                                    }
-                                }
                             }
                         }
 
@@ -1403,7 +1519,7 @@ footer {
                         margin-top: 4vw;
 
                         .panel {
-                            min-height: calc(100vh - 72vw);
+                            min-height: 0;
                             grid-template-columns: 49% 49%;
                             column-gap: 2%;
 
@@ -1505,6 +1621,37 @@ footer {
                                     margin-right: 6.67vw;
                                 }
                             }
+                        }
+                    }
+                }
+            }
+
+            //promotion page
+            &.pro {
+                .pro__title {
+                    padding-top: 50px;
+                    font-size: 20px;
+                    text-align: center;
+                    font-weight: normal;
+                    color: white;
+                    border-bottom: 1px solid #707070;
+                }
+
+                .pro__main {
+                    padding-top: 5.3vw;
+                    padding-bottom: 5.3vw;
+                    display: block;
+
+                    .video {
+                        margin-bottom: 8vw;
+
+                        .video__title {
+                            margin-top: 5.3vw;
+                            font-size: 3.2vw;
+                        }
+
+                        &:nth-last-of-type(1) {
+                            margin-bottom: 0;
                         }
                     }
                 }
@@ -1638,6 +1785,36 @@ footer {
                         font-size: 4vw;
                         margin-bottom: 10.6vw;
                     }
+                }
+            }
+        }
+    }
+
+    .qrcode {
+        padding-top: 16vw;
+        padding-bottom: 16vw;
+    
+        .container__inner {
+            display: block;
+    
+            .qr__img {
+                height: 50vw;
+                margin-right: 0;
+                margin-bottom: 12vw;
+                img {
+                    margin: auto;
+                    height: 100%;
+                }
+            }
+    
+            .qr__text {
+                .qr__text__title {
+                    font-size: 7.2vw;
+                    margin-bottom: 6.67vw;
+                }
+    
+                .qr__text__content {
+                    font-size: 4vw;
                 }
             }
         }

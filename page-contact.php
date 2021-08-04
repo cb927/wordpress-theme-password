@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body2 = 'お問い合わせを受け付けました。<br>
     お問い合わせの回答まで、３営業日ほど頂いております。<br>
     回答まで少々お待ちいただけますと幸いです。<br><br>お名前: ' . $name . '<br>' . 'フリガナ: ' . $furigana . '<br>' . '電話番号: ' . $phone . '<br>' . 'メールアドレス: ' . $email . '<br>' . 'お問い合わせ内容: ' . $content;
-    
+
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
     wp_mail($to1, $subject, $body1, $headers);
@@ -76,6 +76,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </section>
     </div>
 </main>
+<section class="qrcode">
+    <div class="container__inner">
+        <figure class="qr__img">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/qrcode.png" alt="">
+        </figure>
+        <div class="qr__text">
+            <p class="qr__text__title">下記の公式LINEからのお問い合わせも可能です。</p>
+            <p class="qr__text__content">
+                公式LINEからのお問い合わせ回答も行なっております。公式LINEからのお問い合わせの<br>
+                返信はメールフォームからのお問い合わせより比較的対応が早くなっております。
+            </p>
+        </div>
+    </div>
+</section>
 <script>
     $(document).ready(function() {
         var submitted = '<?php echo $submitted; ?>';

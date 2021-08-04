@@ -48,6 +48,10 @@ $(document).ready(function () {
 		$(this).addClass('active');
 		$(this).siblings().removeClass('active');
 	})
+	$('#tab-all').click(function(){
+		$('#panel-all').addClass('active');
+		$('#panel-all').siblings().removeClass('active');
+	})
 	$('#tab-woman').click(function(){
 		$('#panel-woman').addClass('active');
 		$('#panel-woman').siblings().removeClass('active');

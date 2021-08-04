@@ -9,7 +9,7 @@
             </h1>
             <div class="model__main">
                 <div class="tabs">
-                    <div class="categories"><a href="<?php echo home_url(); ?>/model" class="tab-link">◂ BACK</a>
+                    <div class="categories"><a href="<?php echo home_url(); ?>/model" class="tab-link active">◂ BACK</a>
                     </div>
                     <form action="<?php echo home_url(); ?>/model" class="search" method="POST" style='display:none;'>
                         <input type="text" name="key" class="form-control" placeholder="名前で検索">
@@ -33,6 +33,9 @@
                     $bigo = get_post_meta($post->ID, 'bigo', true);
                     $mico = get_post_meta($post->ID, 'mico', true);
                     $pokocha = get_post_meta($post->ID, 'pokocha', true);
+                    $bigo_rank = get_post_meta($post->ID, 'bigo_rank', true);
+                    $mico_rank = get_post_meta($post->ID, 'mico_rank', true);
+                    $pokocha_rank = get_post_meta($post->ID, 'pokocha_rank', true);
                     $id = get_the_ID();
                     $banner_img = get_post_meta($id, 'post_banner_img', true);
                     $banner_img = explode(',', $banner_img);
@@ -147,6 +150,92 @@
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pokocha.png" alt="">
                                     </a>
                                 <?php } ?>
+                            </div>
+                            <div class="badge">
+                                <?php
+                                if ($pokocha_rank == '0') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha0.png" alt="">
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($pokocha_rank == '3') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha0.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha3.png" alt="">
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($pokocha_rank == '2') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha0.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha3.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha2.png" alt="">
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($pokocha_rank == '1') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha0.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha3.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha2.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha1.png" alt="">
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($bigo_rank == '1') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo3.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo2.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo1.png" alt="">
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($bigo_rank == '2') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo3.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo2.png" alt="">
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($bigo_rank == '3') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo3.png" alt="">
+                                <?php
+                                }
+                                ?>
+                            </div>
+                            <div class="badge">
+                                <?php
+                                if ($mico_rank == '1') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico3.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico2.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico1.png" alt="">
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($mico_rank == '2') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico3.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico2.png" alt="">
+                                <?php
+                                }
+                                ?>
+                                <?php
+                                if ($mico_rank == '3') {
+                                ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico3.png" alt="">
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
