@@ -36,6 +36,10 @@
                     $bigo_rank = get_post_meta($post->ID, 'bigo_rank', true);
                     $mico_rank = get_post_meta($post->ID, 'mico_rank', true);
                     $pokocha_rank = get_post_meta($post->ID, 'pokocha_rank', true);
+                    $bigo_rank_array = explode(',', $bigo_rank);
+                    $mico_rank_array = explode(',', $mico_rank);
+                    $pokocha_rank_array = explode(',', $pokocha_rank);
+                    // var_dump($pokocha_rank_array, $bigo_rank_array, $mico_rank_array);exit;
                     $id = get_the_ID();
                     $banner_img = get_post_meta($id, 'post_banner_img', true);
                     $banner_img = explode(',', $banner_img);
@@ -153,86 +157,67 @@
                             </div>
                             <div class="badge">
                                 <?php
-                                if ($pokocha_rank == '0') {
+                                foreach ($pokocha_rank_array as $pitem) {
+                                    if ($pitem == '1') {
                                 ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha0.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha1.png" alt="">
+                                    <?php
+                                    }
+                                    if ($pitem == '2') {
+                                    ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha2.png" alt="">
+                                    <?php
+                                    }
+                                    if ($pitem == '3') {
+                                    ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha3.png" alt="">
+                                    <?php
+                                    }
+                                    ?>
                                 <?php
                                 }
                                 ?>
                                 <?php
-                                if ($pokocha_rank == '3') {
+                                foreach ($bigo_rank_array as $bitem) {
+                                    if ($bitem == '1') {
                                 ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha0.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha3.png" alt="">
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                if ($pokocha_rank == '2') {
-                                ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha0.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha3.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha2.png" alt="">
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                if ($pokocha_rank == '1') {
-                                ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha0.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha3.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha2.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/pokocha1.png" alt="">
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                if ($bigo_rank == '1') {
-                                ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo3.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo2.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo1.png" alt="">
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                if ($bigo_rank == '2') {
-                                ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo3.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo2.png" alt="">
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                if ($bigo_rank == '3') {
-                                ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo3.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo1.png" alt="">
+                                    <?php
+                                    }
+                                    elseif ($bitem == '2') {
+                                    ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo2.png" alt="">
+                                    <?php
+                                    }
+                                    elseif ($bitem == '3') {
+                                    ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/bigo3.png" alt="">
+                                    <?php
+                                    }
+                                    ?>
                                 <?php
                                 }
                                 ?>
                             </div>
                             <div class="badge">
                                 <?php
-                                if ($mico_rank == '1') {
+                                foreach ($mico_rank_array as $mitem) {
+                                    if ($mitem == '1') {
                                 ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico3.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico2.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico1.png" alt="">
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                if ($mico_rank == '2') {
-                                ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico3.png" alt="">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico2.png" alt="">
-                                <?php
-                                }
-                                ?>
-                                <?php
-                                if ($mico_rank == '3') {
-                                ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico3.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico1.png" alt="">
+                                    <?php
+                                    }
+                                    if ($mitem == '2') {
+                                    ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico2.png" alt="">
+                                    <?php
+                                    }
+                                    if ($mitem == '3') {
+                                    ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medal/mico3.png" alt="">
+                                    <?php
+                                    }
+                                    ?>
                                 <?php
                                 }
                                 ?>
